@@ -1,0 +1,59 @@
+<!-- <ion-header>
+
+  <ion-navbar>
+    <ion-title>Login</ion-title>
+  </ion-navbar>
+
+</ion-header> -->
+
+<!--padding -  espaço no começo da página-->
+<ion-content padding>
+  <!-- p.text-center>img -->
+  <p class="text-center">
+    <img src="https://picsum.photos/256/256/" alt="Modern web store">
+  </p>
+  <ion-list no-lines>
+    <form [formGroup]="form">
+      <!-- toda aquela lógica para mostrar vermelho e depois retirar com ngIf nos campos, aqui não preciso fazer. Tudo isso está encapsulado dentro do ion-input -->
+        <ion-item>
+            <ion-label floating>Usuário</ion-label>
+            <!-- type - vai acessar no device
+              tel - teclado de números sem caracteres
+              email - teclado normal já com @ e .
+              text - teclado completo
+              password - não exibe os caracteres 
+            -->
+            <ion-input type="text" formControlName="username"></ion-input>
+          </ion-item>
+          <ion-item>
+              <ion-label floating>Password</ion-label>
+              <ion-input type="password" formControlName="password"></ion-input>
+          </ion-item>
+          <!-- <ion-item>
+            <ion-label floating>Telefone</ion-label>
+            <ion-input type="tel"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label floating>Email</ion-label>
+            <ion-input type="email"></ion-input>
+          </ion-item> -->
+          <!-- traz um datetime picker -->
+          <!-- <ion-item>
+              <ion-label>Date</ion-label>
+              <ion-datetime displayFormat="MM/DD/YYYY" pickerFormat="yyyy-mm-dd" [(ngModel)]="myDate"></ion-datetime>
+            </ion-item> 
+          <ion-item>
+            <ion-label>Gender</ion-label>
+            <ion-select [(ngModel)]="gender">
+              <ion-option value="f">Female</ion-option>
+              <ion-option value="m">Male</ion-option>
+            </ion-select>
+          </ion-item>-->
+    </form>        
+  </ion-list>
+  <button 
+      ion-button color="primary" 
+      large outline block round
+      [disabled]="!form.valid" 
+      (click)="submit()">Entrar</button>
+</ion-content>

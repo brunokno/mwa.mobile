@@ -1,0 +1,23 @@
+<ion-header>
+    <ion-navbar>
+      <ion-buttons start>
+        <button ion-button (click)="close()">
+          <!-- showWhen - Quando for ios -->
+          <span ion-text color="primary" showWhen="ios">Cancelar</span>
+          <!-- showWhen - Quando for android/windows -->
+          <ion-icon name="md-close" showWhen="android,windows"></ion-icon>
+        </button>
+      </ion-buttons>
+      <ion-title>Modern Web Store</ion-title>
+    </ion-navbar>
+  </ion-header>
+  
+  <ion-content padding>
+    <p class="text-center">
+      <img src="{{ product.image }}" alt="">
+      <!-- <img src="https://picsum.photos/128/128/" alt=""> -->
+    </p>
+    <h1>{{ product.title }}</h1>
+    <p>{{ product.description }}</p>
+    <h1 class="text-center">{{ product.price | currency: 'BRL' }}</h1>  
+  </ion-content>
